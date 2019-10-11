@@ -5,31 +5,33 @@
       <li v-for="error in errors">{{ error }}</li>
     </ul>
 
-    <div>
-      Title: <input type="text" v-model="newRecipeTitle">
-    </div>
+    <form v-on:submit.prevent="submit()">
+      <div>
+        Title: <input type="text" v-model="newRecipeTitle">
+      </div>
 
-    <div>
-      Chef: <input type="text" v-model="newRecipeChef">
-    </div>
+      <div>
+        Chef: <input type="text" v-model="newRecipeChef">
+      </div>
 
-    <div>
-      Prep Time: <input type="text" v-model="newRecipePrepTime">
-    </div>
+      <div>
+        Prep Time: <input type="text" v-model="newRecipePrepTime">
+      </div>
 
-    <div>
-      Ingredients: <input type="text" v-model="newRecipeIngredients">
-    </div>
+      <div>
+        Ingredients: <input type="text" v-model="newRecipeIngredients">
+      </div>
 
-    <div>
-      Directions: <input type="text" v-model="newRecipeDirections">
-    </div>
+      <div>
+        Directions: <input type="text" v-model="newRecipeDirections">
+      </div>
 
-    <div>
-      Image URL: <input type="text" v-model="newRecipeImageUrl">
-    </div>
+      <div>
+        Image URL: <input type="text" v-model="newRecipeImageUrl">
+      </div>
 
-    <button v-on:click="createRecipe()">Create</button>
+      <input type="submit" value="Create">
+    </form>
   </div>
 </template>
 
@@ -53,7 +55,7 @@ export default {
   },
   created: function() {},
   methods: {
-    createRecipe: function() {
+    submit: function() {
       var clientParams = {
         title: this.newRecipeTitle,
         chef: this.newRecipeChef,
@@ -66,14 +68,7 @@ export default {
       axios
         .post("/api/recipes", clientParams)
         .then(response => {
-          this.errors = [];
-
-          this.newRecipeTitle = "";
-          this.newRecipeChef = "";
-          this.newRecipePrepTime = "";
-          this.newRecipeIngredients = "";
-          this.newRecipeDirections = "";
-          this.newRecipeImageUrl = "";
+          this.$router.push("/")
         })
         .catch(error => {
           this.errors = error.response.data.errors;
