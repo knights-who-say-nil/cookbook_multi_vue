@@ -15,6 +15,11 @@
     </ol>
 
     <img v-bind:src="recipe.image_url" v-bind:alt="recipe.title">
+
+    <div>
+      <router-link v-bind:to=" '/recipes/' + recipe.id + '/edit' ">Edit</router-link>
+      <button v-on:click="destroyRecipe()">Destroy</button>
+    </div>
   </div>
 </template>
 
@@ -28,6 +33,7 @@ export default {
   data: function() {
     return {
       recipe: {
+        id: "",
         title: "",
         chef: "",
         prep_time: "",
@@ -50,6 +56,14 @@ export default {
         this.recipe = response.data;
       });
   },
-  methods: {}
+  methods: {
+    destroyRecipe: function() {
+      axios
+        .delete("/api/recipes/" + this.recipe.id)
+        .then(response => {
+          this.$router.push("/");
+        });
+    }
+  }
 };
 </script>

@@ -68,7 +68,7 @@ export default {
       axios
         .post("/api/recipes", clientParams)
         .then(response => {
-          this.$router.push("/")
+          this.$router.push("/");
         })
         .catch(error => {
           this.errors = error.response.data.errors;
