@@ -17,8 +17,8 @@
     <img v-bind:src="recipe.image_url" v-bind:alt="recipe.title">
 
     <div>
-      <router-link v-bind:to=" '/recipes/' + recipe.id + '/edit' ">Edit</router-link>
-      <button v-on:click="destroyRecipe()">Destroy</button>
+      <router-link class="btn btn-warning" v-bind:to=" '/recipes/' + recipe.id + '/edit' ">Edit</router-link>
+      <button class="btn btn-danger" v-on:click="destroyRecipe()">Destroy</button>
     </div>
   </div>
 </template>

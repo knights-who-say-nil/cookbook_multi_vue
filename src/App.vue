@@ -21,10 +21,11 @@
               Dropdown
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+
+              <router-link class="dropdown-item" to="/signup">Sign Up</router-link>
+              <router-link class="dropdown-item" to="/login">Log In</router-link>
+              <router-link class="dropdown-item" to="/Logout">Log Out</router-link>
+
             </div>
           </li>
           <li class="nav-item">
@@ -45,7 +46,7 @@
 
 <style>
 body {
-  font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD",Georgia,serif;
+  font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
   background-image: url('/images/green_cup.png');
 }
 </style>
