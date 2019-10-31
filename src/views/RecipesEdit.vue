@@ -1,37 +1,91 @@
 <template>
   <div class="recipes-edit">
-    <h1>Edit Recipe</h1>
-    <ul>
-      <li v-for="error in errors">{{ error }}</li>
-    </ul>
+    <!-- Section - Contact Start -->
+    <section id="contact" class="bg-gray-dark-2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h3 class="font-alt font-w-600 letter-spacing-2 title-extra-large text-uppercase text-white">Change Recipe</h3>
+                    <p class="mt-3 text-gray text-extra-large"><i>Fix up the Fixin's for {{ recipe.title }}</i></p>
+                    <span class="bg-base-color mt-4 mx-auto sep-line-medium-thick-long"></span>
+                </div>
+                <!-- //.col-lg-8 -->
+            </div>
+            <!-- //.row -->
+            
 
-    <form v-on:submit.prevent="submit()">
-      <div>
-        Title: <input type="text" v-model="recipe.title">
-      </div>
+            <div class="row justify-content-center mt-5 pt-lg-5">
+                <div class="col-lg-8">
+                    <form v-on:submit.prevent="submit()" id="form-contact">
+                        <div class="row">
+                          <div class="col-12">
+                              <div class="form-group">
+                                  <input type="text" class="font-alt form-control required" v-model="recipe.title" placeholder="Title">
+                              </div>
+                              <!-- //.form-group -->
+                          </div>
+                          <!-- //.col-12 -->
 
-      <div>
-        Chef: <input type="text" v-model="recipe.chef">
-      </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                  <input type="text" class="font-alt form-control required" v-model="recipe.prep_time" placeholder="Prep Time">
+                                </div>
+                                <!-- //.form-group -->
+                            </div>
+                            <!-- //.col-lg-6 -->
+                            
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="text" class="font-alt form-control required" v-model="recipe.chef" placeholder="Chef">
+                                </div>
+                                <!-- //.form-group -->
+                            </div>
+                            <!-- //.col-lg-6 -->
+                            
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input type="text" class="font-alt form-control required" v-model="recipe.image_url" placeholder="Image URL">
+                                </div>
+                                <!-- //.form-group -->
+                            </div>
+                            <!-- //.col-12 -->
+                            
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea class="font-alt form-control required" rows="12" placeholder="Ingredients" v-model="recipe.ingredients"></textarea>
+                                </div>
+                                <!-- //.form-group -->
+                            </div>
+                            <!-- //.col-12 -->
 
-      <div>
-        Prep Time: <input type="text" v-model="recipe.prep_time">
-      </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea class="font-alt form-control required" rows="12" placeholder="Directions" v-model="recipe.directions"></textarea>
+                                </div>
+                                <!-- //.form-group -->
+                            </div>
+                            <!-- //.col-12 -->
+                            
+                            <div class="col-12">
+                                <span class="d-block font-alt letter-spacing-1 text-gray text-small text-uppercase">*Please complete all fields correctly</span>
+                                <button type="submit" class="btn btn-base-color btn-block btn-large box-shadow-wide mt-5 mx-0 text-white" id="btn-form-contact">Update</button>
 
-      <div>
-        Ingredients: <input type="text" v-model="recipe.ingredients">
-      </div>
-
-      <div>
-        Directions: <input type="text" v-model="recipe.directions">
-      </div>
-
-      <div>
-        Image URL: <input type="text" v-model="recipe.image_url">
-      </div>
-
-      <input type="submit" value="Update">
-    </form>
+                                <ul class="text-gray mt-3">
+                                  <li v-for="error in errors">{{ error }}</li>
+                                </ul>
+                            </div>
+                            <!-- //.col-12 -->
+                        </div>
+                        <!-- //.row -->
+                    </form>
+                </div>
+                <!-- //.col-lg-8 -->
+            </div>
+            <!-- //.row -->
+        </div>
+        <!-- //.container -->
+    </section>
+    <!-- //Section - Contact End -->
   </div>
 </template>
 

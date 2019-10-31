@@ -1,52 +1,112 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-      <router-link class="navbar-brand" to="/">Josh's Cookbook</router-link>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/recipes/new">New Recipe</router-link>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-              <router-link class="dropdown-item" to="/signup">Sign Up</router-link>
-              <router-link class="dropdown-item" to="/login">Log In</router-link>
-              <router-link class="dropdown-item" to="/Logout">Log Out</router-link>
-
+    <!-- Section - Home Start -->
+    <section v-if=" $router.currentRoute.path === '/'" id="home" class="home-bg-static bg-cover bg-gray-dark bg-overlay-black-5 w-100">
+        <div class="container h-100">
+            <div class="row align-items-center h-100 justify-content-center">
+                <div class="col-lg-9 text-center">
+                    <h2 class="font-alt font-w-600 letter-spacing-2 m-0 mt-3 opacity-9-5 text-uppercase text-white title-sm-extra-large-2 title-extra-large-4">Josh's Cookbook</h2>
+                    <span class="d-block font-alt mt-2 opacity-9-5 text-white title-sm-extra-large title-extra-large-3">Delicate Delicacies</span>
+                    <span class="d-block font-alt mb-2 mt-2 opacity-9-5 text-white text-extra-large">If you look at my recipes, you'll see I'm a bad cook</span>
+                </div>
+                <!-- //.col-lg-9 -->
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
+            <!-- //.row -->
+        </div>
+        <!-- //.container -->
+    </section>
+    <!-- //Section - Home End -->
+    
+    
+    <!-- Navigation Start -->
+    <nav id="navigation" class="navbar navbar-dark navbar-expand-lg bg-dark">
+        <div class="container">
+            <div class="navbar-header d-lg-none">
+                <a class="navbar-brand page-scroll" href="#page-top">BERG</a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-berg" aria-controls="navbar-berg" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <!-- //.navbar-header -->
+            
+            <div class="navbar-collapse collapse justify-content-center" id="navbar-berg">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/">Home</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/recipes/new">New Recipe</router-link>
+                    </li>
+                    <li class="nav-item">
+                      <router-link class="nav-link" to="/signup">Sign Up</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/login">Log In</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/Logout">Log Out</router-link>
+                    </li>
+                </ul>
+            </div>
+            <!-- //.navbar-collapse -->
+        </div>
+        <!-- //.container -->
     </nav>
+    <!-- //Navigation End -->
 
     <router-view/>
+
+    <!-- Footer End -->
+    <footer class="bg-gray-dark">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col text-center">
+                    <ul class="m-0 p-0">
+                        <li class="list-inline-item">
+                            <a href="#" target="_blank" class="bg-gray-2 box-shadow-wide rounded text-white text-extra-large">
+                                <i class="fa fa-facebook ease"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" target="_blank" class="bg-gray-2 box-shadow-wide rounded text-white text-extra-large">
+                                <i class="fa fa-twitter ease"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" target="_blank" class="bg-gray-2 box-shadow-wide rounded text-white text-extra-large">
+                                <i class="fa fa-linkedin ease"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" target="_blank" class="bg-gray-2 box-shadow-wide rounded text-white text-extra-large">
+                                <i class="fa fa-dribbble ease"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" target="_blank" class="bg-gray-2 box-shadow-wide rounded text-white text-extra-large">
+                                <i class="fa fa-instagram ease"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" target="_blank" class="bg-gray-2 box-shadow-wide rounded text-white text-extra-large">
+                                <i class="fa fa-pinterest ease"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <p class="m-0 mt-4 text-gray text-medium">&copy; 2017 Nick Berg. All rights reserved.</p>
+                </div>
+                <!-- //.col -->
+            </div>
+            <!-- //.row -->
+        </div>
+        <!-- //.container -->
+    </footer>
+    <!-- //Footer End -->
 
   </div>
 </template>
 
 <style>
-body {
-  font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
-  background-image: url('/images/green_cup.png');
-}
 </style>

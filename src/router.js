@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
 import RecipesIndex from './views/RecipesIndex.vue';
 import RecipesNew from './views/RecipesNew.vue';
 import RecipesShow from './views/RecipesShow.vue';
