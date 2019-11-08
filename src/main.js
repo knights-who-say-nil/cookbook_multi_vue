@@ -3,8 +3,7 @@ import App from './App.vue'
 import router from './router'
 import axios from "axios";
 
-axios.defaults.baseURL = 
-  process.env.NODE_ENV === "development" ? "https://joshcookbook.herokuapp.com" : "https://joshcookbook.herokuapp.com/api/recipes";
+axios.defaults.baseURL = "https://joshcookbook.herokuapp.com";
 
 var jwt = localStorage.getItem("jwt");
 if (jwt) {
